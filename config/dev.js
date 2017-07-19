@@ -3,6 +3,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 module.exports = {
     publicPath:'',
     filename:'[name].js',
+    staticPath:'assets',
     plugins:[
         new webpack.optimize.CommonsChunkPlugin({
             names: ['vendor', 'manifest']

@@ -1,4 +1,4 @@
-const resolve = require('path').resolve;
+const path = require('path');
 const url = require('url');
 const options  = process.env.NODE_ENV ==='production'?require('./config/build.js'):require('./config/dev.js');
 module.exports = () => ({
@@ -7,7 +7,7 @@ module.exports = () => ({
         index: './src/main.js'
     },
     output: {
-        path: resolve(__dirname, 'dist'),
+        path: path.resolve(__dirname, 'dist'),
         filename: options.filename,
         chunkFilename: '[id].js?[chunkhash]',
         publicPath: options.publicPath
@@ -41,16 +41,19 @@ module.exports = () => ({
                 use: [{
                     loader: 'url-loader',
                     options: {
-                        limit: 10000
+                        limit: 10000,
+                        name:path.posix.join(options.staticPath,'image/[name].[hash:7].[ext]')
                     }
                 }]
+
             }
         ]
     },
     plugins: options.plugins,
     resolve: {
         alias: {
-            '~': resolve(__dirname, 'src')
+            '~': path.resolve(__dirname, 'src'),
+            'assets': path.resolve('src', 'assets')
         }
     },
     devServer: {
