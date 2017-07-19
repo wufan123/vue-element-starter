@@ -1,11 +1,15 @@
 import Vue from 'vue'
+import './style/theme/index.css'
+import './style/common.css'
 import ElementUI from 'element-ui'
-import 'element-ui/lib/theme-default/index.css'
 import App from './App.vue'
+import VueRouter from 'vue-router'
+import rooter from  './rooter'
 
-Vue.use(ElementUI)
-
+Vue.use(ElementUI);
+Vue.use(VueRouter);
 new Vue({
-  el: '#app',
-  render: h => h(App)
-})
+    el: '#app',
+    router: rooter,
+    render: h => h(App)
+});
