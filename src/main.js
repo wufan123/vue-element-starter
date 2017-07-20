@@ -7,8 +7,10 @@ import rooter from  './rooter'
 
 Vue.use(ElementUI);
 Vue.use(VueRouter);
-new Vue({
+const vueApp= new Vue({
     el: '#app',
     router: rooter,
     render: h => h(App)
 });
+
+export  default vueApp;

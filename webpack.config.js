@@ -60,8 +60,8 @@ module.exports = () => ({
         host: '127.0.0.1',
         port: 8010,
         proxy: {
-            '/api/': {
-                target: 'http://127.0.0.1:8080',
+            '/api': {
+                target: 'http://192.168.10.239',
                 changeOrigin: true,
                 pathRewrite: {
                     '^/api': ''

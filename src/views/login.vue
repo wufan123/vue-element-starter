@@ -4,22 +4,22 @@
         </div>
         <el-row class="login-box">
             <el-col>
-                <el-form ref="form">
-                    <el-form-item>
+                <el-form :model="loginForm" :rules="loginRules" ref="loginForm" >
+                    <el-form-item  prop="loginName">
                         <span class="icon account"></span>
-                        <el-input placeholder="请输入用户名">
+                        <el-input placeholder="请输入用户名" v-model="loginForm.loginName" >
+                        </el-input>
+                    </el-form-item>
+                    <el-form-item prop="password" >
+                        <span class="icon password" ></span>
+                        <el-input placeholder="请输入密码" type="password" v-model="loginForm.password">
                         </el-input>
                     </el-form-item>
                     <el-form-item>
-                        <span class="icon password"></span>
-                        <el-input placeholder="请输入密码">
-                        </el-input>
+                        <el-checkbox v-model="loginForm.keepPass">记住密码</el-checkbox>
                     </el-form-item>
                     <el-form-item>
-                        <el-checkbox>记住密码</el-checkbox>
-                    </el-form-item>
-                    <el-form-item>
-                        <el-button type="primary login-button">
+                        <el-button type="primary login-button" @click="submitForm('loginForm')">
                             登录
                         </el-button>
                     </el-form-item>
@@ -29,6 +29,39 @@
     </div>
 </template>
 <script>
+    import loginApi from '../api/loginApi'
+    export default {
+        data() {
+            return {
+                loginForm:{
+                    loginName:'',
+                    password:'',
+                },
+                loginRules:{
+                    loginName:[
+                        { required: true, message: '请输入用户名', trigger: 'blur' }
+                    ],
+                    password:[
+                        { required: true, message: '请输入密码', trigger: 'blur' }
+                    ]
+                }
+            }
+        },
+        methods:{
+            submitForm(formName) {
+                this.$refs[formName].validate((valid) => {
+                    if (valid) {
+                        loginApi.login(this.loginForm).then((response)=>{
+
+                        })
+                    } else {
+                        return false;
+                    }
+                });
+            }
+        }
+
+    }
 </script>
 <style lang="less">
     .login {

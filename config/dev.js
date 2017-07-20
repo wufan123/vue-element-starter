@@ -12,7 +12,7 @@ module.exports = {
             template: 'src/index.html'
         }),
         new webpack.DefinePlugin({//运行时变量
-            BASE_URL:''
+            _BASE_URL:JSON.stringify('api/')
         })
     ],
     devtool:'#eval-source-map'//#source-map
