@@ -11,8 +11,8 @@
 
   /* Colors
   -------------------------- */
-  --color-primary: red;
-
+  --color-primary: #3e3a39;
+  --color-sub-primary: #fcdf02;
   --color-success: #13ce66;
   --color-warning: #f7ba2a;
   --color-danger: #ff4949;
@@ -269,7 +269,7 @@
 
   --input-hover-border: var(--border-color-hover);
 
-  --input-focus-border: var(--color-primary);
+  --input-focus-border: var(--color-sub-primary);
   --input-focus-fill: var(--color-white);
 
   --input-disabled-fill: var(--disabled-fill-base);
@@ -361,7 +361,7 @@
   --button-disabled-border: var(--disabled-border-base);
 
   --button-primary-border: var(--color-primary);
-  --button-primary-color: var(--color-white);
+  --button-primary-color: var(--color-sub-primary);
   --button-primary-fill: var(--color-primary);
 
   --button-success-border: var(--color-success);
@@ -500,7 +500,7 @@
   --------------------------*/
   --card-border-color: var(--disabled-border-base);
   --card-border-radius: 4px;
-  --card-padding: 20px;
+  --card-padding: 30px;
 
   /* Slider
   --------------------------*/

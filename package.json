@@ -5,7 +5,7 @@
   "private": true,
   "scripts": {
     "dev": "webpack-dev-server --inline --hot --env.dev",
-    "dev t": "et -c src/style/base-variables.css -o src/style/theme && webpack-dev-server --inline --hot --env.dev",
+    "theme": "et -c src/style/base-variables.css -o src/style/theme",
     "build": "rimraf dist && webpack -p --progress --hide-modules"
   },
   "dependencies": {

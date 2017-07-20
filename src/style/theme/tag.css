@@ -91,7 +91,7 @@
 }
 
 .el-tag{
-    background-color: rgb(165, 136, 131);
+    background-color: rgb(165, 143, 131);
     display: inline-block;
     padding: 0 5px;
     height: 24px;
@@ -121,37 +121,37 @@
 
 .el-tag .el-icon-close:hover{
     background-color: #fff;
-    color: rgb(165, 136, 131)
+    color: rgb(165, 143, 131)
 }
 
 .el-tag--gray{
-    background-color: rgb(241, 231, 228);
-    border-color: rgb(241, 231, 228);
-    color: rgb(106, 77, 72)
+    background-color: rgb(241, 234, 228);
+    border-color: rgb(241, 234, 228);
+    color: rgb(106, 84, 72)
 }
 
 .el-tag--gray .el-tag__close:hover{
-    background-color: rgb(106, 77, 72);
+    background-color: rgb(106, 84, 72);
     color: #fff
 }
 
 .el-tag--gray.is-hit{
-    border-color: rgb(106, 77, 72)
+    border-color: rgb(106, 84, 72)
 }
 
 .el-tag--primary{
-    background-color: rgba(255, 0, 0, 0.1);
-    border-color: rgba(255, 0, 0, 0.2);
-    color: red
+    background-color: rgba(62, 58, 57, 0.1);
+    border-color: rgba(62, 58, 57, 0.2);
+    color: #3e3a39
 }
 
 .el-tag--primary .el-tag__close:hover{
-    background-color: red;
+    background-color: #3e3a39;
     color: #fff
 }
 
 .el-tag--primary.is-hit{
-    border-color: red
+    border-color: #3e3a39
 }
 
 .el-tag--success{
