@@ -4,14 +4,14 @@
         </div>
         <el-row class="login-box">
             <el-col>
-                <el-form :model="loginForm" :rules="loginRules" ref="loginForm" >
-                    <el-form-item  prop="loginName">
+                <el-form :model="loginForm" :rules="loginRules" ref="loginForm">
+                    <el-form-item prop="loginName">
                         <span class="icon account"></span>
-                        <el-input placeholder="请输入用户名" v-model="loginForm.loginName" >
+                        <el-input placeholder="请输入用户名" v-model="loginForm.loginName">
                         </el-input>
                     </el-form-item>
-                    <el-form-item prop="password" >
-                        <span class="icon password" ></span>
+                    <el-form-item prop="password">
+                        <span class="icon password"></span>
                         <el-input placeholder="请输入密码" type="password" v-model="loginForm.password">
                         </el-input>
                     </el-form-item>
@@ -32,26 +32,31 @@
     import loginApi from '../api/loginApi'
     export default {
         data() {
+            let user = this.$localUtil.getUser();
             return {
-                loginForm:{
-                    loginName:'',
-                    password:'',
+                loginForm: {
+                    loginName: user.loginName,
+                    password: user.password,
+                    keepPass: user.keepPass
                 },
-                loginRules:{
-                    loginName:[
-                        { required: true, message: '请输入用户名', trigger: 'blur' }
+                loginRules: {
+                    loginName: [
+                        {required: true, message: '请输入用户名', trigger: 'blur'}
                     ],
-                    password:[
-                        { required: true, message: '请输入密码', trigger: 'blur' }
+                    password: [
+                        {required: true, message: '请输入密码', trigger: 'blur'}
                     ]
                 }
             }
         },
-        methods:{
+        methods: {
             submitForm(formName) {
                 this.$refs[formName].validate((valid) => {
                     if (valid) {
-                        loginApi.login(this.loginForm).then((response)=>{
+                        loginApi.login(this.loginForm).then((response) => {
+                            if (this.loginForm.keepPass) {
+                                this.$localUtil.setUser(this.loginForm);
+                            }
 
                         })
                     } else {
@@ -88,7 +93,7 @@
             .login-button {
                 width: 100%;
             }
-            input{
+            input {
                 height: 44px;
                 padding-left: 44px;
                 line-height: 44px;
