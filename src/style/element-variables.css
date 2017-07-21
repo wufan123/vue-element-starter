@@ -45,7 +45,7 @@
   --border-width-base: 1px;
   --border-style-base: solid;
   --border-color-base: var(--color-extra-light-silver);
-  --border-color-hover: var();/*ar(--color-base-silver)*/
+  --border-color-hover: var(--color-base-silver);
   --border-base: var(--border-width-base) var(--border-style-base) var(--border-color-base);
   --border-radius-base: 4px;
   --border-radius-small: 2px;
@@ -529,9 +529,9 @@
   --menu-item-fill: var(--color-extra-light-gray);
   --menu-item-hover-fill: var(--disabled-border-base);
 
-  --dark-menu-item-color: var(--link-color);
-  --dark-menu-item-fill: var(--color-light-black);
-  --dark-menu-item-hover-fill: var(--link-color);
+  --dark-menu-item-color: var(--color-white);
+  --dark-menu-item-fill: var(--color-primary);
+  --dark-menu-item-hover-fill: var(--color-white);
 
   /* Rate
   --------------------------*/

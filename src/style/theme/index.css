@@ -3384,7 +3384,7 @@
     list-style: none;
 }
 .el-menu--dark {
-    background-color: rgb(87, 65, 50);
+    background-color: #3e3a39;
 }
 .el-menu--dark .el-menu-item, .el-menu--dark .el-submenu__title {
     color: rgb(217, 199, 191);
@@ -3457,7 +3457,7 @@
 }
 .el-menu--horizontal.el-menu--dark {}
 .el-menu--horizontal.el-menu--dark .el-menu-item:hover, .el-menu--horizontal.el-menu--dark .el-submenu__title:hover {
-    background-color: rgb(87, 65, 50);
+    background-color: #3e3a39;
 }
 .el-menu--horizontal.el-menu--dark .el-submenu .el-menu-item, .el-menu--horizontal.el-menu--dark .el-submenu .el-submenu-title {
     color: rgb(106, 84, 72);

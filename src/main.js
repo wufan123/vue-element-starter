@@ -1,14 +1,16 @@
 import Vue from 'vue'
 import './style/theme/index.css'
 import ElementUI from 'element-ui'
+// import 'element-ui/lib/theme-default/index.css'
 import App from './App.vue'
 import VueRouter from 'vue-router'
 import rooter from  './rooter'
-import localUtil from  './utils/localUtil'
+import storage from  './utils/storage'
 
 Vue.use(ElementUI);
 Vue.use(VueRouter);
-Vue.prototype.$localUtil = localUtil;
+Vue.prototype.$storage = storage;
+
 const vueApp= new Vue({
     el: '#app',
     router: rooter,

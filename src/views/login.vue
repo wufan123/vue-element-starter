@@ -32,13 +32,10 @@
     import loginApi from '../api/loginApi'
     export default {
         data() {
-            let user = this.$localUtil.getUser();
+            const user = this.$storage.getUser();
+            console.log(user);
             return {
-                loginForm: {
-                    loginName: user.loginName,
-                    password: user.password,
-                    keepPass: user.keepPass
-                },
+                loginForm: user,
                 loginRules: {
                     loginName: [
                         {required: true, message: '请输入用户名', trigger: 'blur'}
@@ -55,9 +52,11 @@
                     if (valid) {
                         loginApi.login(this.loginForm).then((response) => {
                             if (this.loginForm.keepPass) {
-                                this.$localUtil.setUser(this.loginForm);
+                                this.$storage.setUser(this.loginForm)
+                            } else {
+                                this.$storage.clearUser();
                             }
-
+                            this.$storage.setItem(this.$storage.KEY_USER_DETAIL,response.resultData);
                         })
                     } else {
                         return false;

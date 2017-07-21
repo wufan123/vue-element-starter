@@ -1,26 +1,52 @@
-@color-sub-primary:#fcdf02;
+@import "base-variables";
 
-
-html{
+html {
   height: 100%;
   width: 100%;
 }
-body{
+
+body {
   height: 100%;
   width: 100%;
   margin: 0;
   padding: 0;
 }
-.content-center{
+
+.content-center {
   display: flex;
   align-items: center;
   justify-content: center;
 }
-.el-button--primary{
+
+.el-button--primary {
   color: @color-sub-primary;
 }
-input{
-  :focus{
+//修改element input 细节
+input {
+  :focus {
     border-color: @color-sub-primary;
   }
+}
+
+//修改element顶部菜单细节
+.el-menu {
+  border-radius: 0px;
+
+}
+main .el-menu-item.is-active {
+  color: #fff;
+  border-bottom: 5px solid @color-sub-primary;
+
+}
+.el-menu--horizontal .el-menu-item {
+  height: 70px;
+  line-height: 70px;
+}
+.el-menu--horizontal > .el-menu-item:hover {
+  border-bottom: 5px solid @color-sub-primary;
+}
+.el-menu--dark .el-menu-item {
+  font-size: 16px;
+  color: #898989;
+  text-decoration-style: solid;
 }

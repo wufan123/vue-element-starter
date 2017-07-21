@@ -53,7 +53,8 @@ module.exports = () => ({
     resolve: {
         alias: {
             '~': path.resolve(__dirname, 'src'),
-            'assets': path.resolve('src', 'assets')
+            'assets': path.resolve('src', 'assets'),
+            'style': path.resolve('src', 'style')
         }
     },
     devServer: {
