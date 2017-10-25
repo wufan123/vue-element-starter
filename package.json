@@ -1,12 +1,12 @@
 {
-  "name": "vue-element-web",
+  "name": "vue-element-starter",
   "description": "A template that element web",
   "author": "whr<357114638@qq.com>",
   "private": true,
   "scripts": {
-    "dev": "webpack-dev-server --inline --hot --env.dev",
+    "dev": "webpack-dev-server --config ./build/webpack.dev.conf --inline --hot --env.dev",
     "theme": "et -c src/style/element-variables.css -o src/style/theme",
-    "build": "rimraf dist && webpack -p --progress --hide-modules"
+    "build": "rimraf dist&&set NODE_ENV=production&&webpack --config ./build/webpack.pro.conf --progress --hide-modules"
   },
   "dependencies": {
     "axios": "^0.16.2",
@@ -21,11 +21,12 @@
     "autoprefixer": "^6.6.0",
     "babel-core": "^6.24.1",
     "babel-loader": "^6.4.0",
+    "babel-preset-es2015": "^6.24.1",
     "babel-preset-vue-app": "^1.2.0",
     "css-loader": "^0.27.0",
     "element-theme": "^0.7.2",
     "element-theme-default": "^1.3.7",
-    "extract-text-webpack-plugin": "^3.0.0",
+    "extract-text-webpack-plugin": "^2.1.2",
     "file-loader": "^0.10.1",
     "html-webpack-plugin": "^2.24.1",
     "less": "^2.7.2",
@@ -37,6 +38,7 @@
     "vue-loader": "^11.1.4",
     "vue-template-compiler": "^2.1.8",
     "webpack": "^2.4.1",
-    "webpack-dev-server": "^2.4.2"
+    "webpack-dev-server": "^2.4.2",
+    "webpack-merge": "^4.1.0"
   }
 }

@@ -1,2 +1,4 @@
-import Vue from 'vue'
-import ElementUI from 'element-ui'
+import 'vue'
+import 'element-ui'
+import 'vue-router'
+import 'axios'
