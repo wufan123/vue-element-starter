@@ -91,7 +91,7 @@
 }
 
 .el-card{
-    border: 1px solid rgb(229, 215, 209);
+    border: 1px solid rgb(209, 219, 229);
     border-radius: 4px;
     background-color: #fff;
     overflow: hidden;
@@ -100,13 +100,13 @@
 }
 
 .el-card__header{
-    padding: 28px 30px;
-    border-bottom: 1px solid rgb(229, 215, 209);
+    padding: 18px 20px;
+    border-bottom: 1px solid rgb(209, 219, 229);
     box-sizing: border-box
 }
 
 .el-card__body{
-    padding: 30px
+    padding: 20px
 }
 :root{
     /* Transition

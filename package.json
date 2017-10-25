@@ -5,8 +5,8 @@
   "private": true,
   "scripts": {
     "dev": "webpack-dev-server --config ./build/webpack.dev.conf --inline --hot --env.dev",
-    "theme": "et -c src/style/element-variables.css -o src/style/theme",
-    "build": "rimraf dist&&set NODE_ENV=production&&webpack --config ./build/webpack.pro.conf --progress --hide-modules"
+    "build": "rimraf dist&&set NODE_ENV=production&&webpack --config ./build/webpack.pro.conf --progress --hide-modules",
+    "theme": "et -c src/style/element-variables.css -o src/style/theme"
   },
   "dependencies": {
     "axios": "^0.16.2",

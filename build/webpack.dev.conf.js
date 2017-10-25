@@ -22,7 +22,7 @@ module.exports = merge.smart(baseWebpackConfig, {
         port: 8020,
         proxy: {
             '/api': {
-                target: 'http://192.168.10.26:29088',
+                target: 'http://192.168.10.26:29088',//调试时的代理服务器
                 changeOrigin: true,
                 pathRewrite: {
                     '^/api': ''
