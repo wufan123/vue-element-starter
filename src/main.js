@@ -5,11 +5,9 @@ import ElementUI from 'element-ui'
 import App from './App.vue'
 import VueRouter from 'vue-router'
 import rooter from  './rooter'
-import storage from  './utils/storage'
 
 Vue.use(ElementUI);
 Vue.use(VueRouter);
-Vue.prototype.$storage = storage;
 
 const vueApp= new Vue({
     el: '#app',

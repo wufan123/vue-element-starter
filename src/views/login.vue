@@ -32,10 +32,8 @@
     import loginApi from '../api/loginApi'
     export default {
         data() {
-            const user = this.$storage.getUser();
-            console.log(user);
             return {
-                loginForm: user,
+                loginForm: {},
                 loginRules: {
                     loginName: [
                         {required: true, message: '请输入用户名', trigger: 'blur'}
@@ -50,14 +48,7 @@
             submitForm(formName) {
                 this.$refs[formName].validate((valid) => {
                     if (valid) {
-                        loginApi.login(this.loginForm).then((response) => {
-                            if (this.loginForm.keepPass) {
-                                this.$storage.setUser(this.loginForm)
-                            } else {
-                                this.$storage.clearUser();
-                            }
-                            this.$storage.setItem(this.$storage.KEY_USER_DETAIL,response.resultData);
-                        })
+                        this.$router.push('Main')
                     } else {
                         return false;
                     }
@@ -71,7 +62,7 @@
     .login {
         width: 100%;
         height: 100%;
-        background: url("~assets/image/login/login_bg.png") no-repeat center;
+        background-color: #efefef;
         background-size: cover;
         .login-logo {
             position: absolute;
@@ -79,16 +70,17 @@
             left: 40px;
             height: 36px;
             width: 251px;
-            background: url("~assets/image/login/login_logo.png") no-repeat center;
             background-size: cover;
+
 
         }
         .login-box {
-            height: 394px;
+            height: 350px;
             width: 350px;
-            padding: 138px 30px 30px 30px;
-            background: url("~assets/image/login/login_user.png") no-repeat center;
+            padding: 40px 30px;
+            background-color: #ffffff;
             background-size: cover;
+            border-radius: 10px;
             .login-button {
                 width: 100%;
             }
